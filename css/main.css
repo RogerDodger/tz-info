@@ -1,0 +1,46 @@
+/* main.css */
+
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	background: #ccc;
+}
+
+p {
+	margin: 0;
+	padding: 0;
+	line-height: 1.6em;
+}
+
+form, p {
+	padding-bottom: 1.6em;
+}
+
+a            { text-decoration: none; }
+a, a:visited { color: blue; }
+p a:hover    { 
+	color: dodgerblue; 
+	transition: all .10s ease-in-out;
+	-moz-transition: all .10s ease-in-out;
+	-webkit-transition: all .10s ease-in-out;
+}
+
+#main {
+	width: 585px;
+	margin: 25px 0 0 50px;
+	background: #fff;
+	box-shadow: 0px 0px 10px #000;
+	padding: 50px 50px 0 50px;
+	padding-top: 40px;
+}
+
+#footer {
+	text-align: center;
+	font-size: 0.9em;
+}
+
+.invalid, .valid {
+	font-weight: bold;
+	font-family: "DejaVu Sans Mono", monospace;
+}
+.invalid { color: red; }
+.valid { color: green; }
