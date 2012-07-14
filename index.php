@@ -76,7 +76,7 @@ dirname(htmlentities($_SERVER["SCRIPT_NAME"]))."/lib/timestrings.php?list=all";
 		$response = "<p><span class=\"invalid\">'$tz'</span> is not a valid timezone.</p>";
 	}
 } else {
-	$response = "<p>No timezone chosen.</p>";
+	$response = "<p>Input your location (i.e., timezone).</p>";
 }
 
 ?>
