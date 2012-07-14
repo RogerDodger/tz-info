@@ -11,7 +11,7 @@ p {
 	line-height: 1.6em;
 }
 
-form, p {
+table, p {
 	padding-bottom: 1.6em;
 }
 
@@ -44,3 +44,5 @@ p a:hover    {
 }
 .invalid { color: red; }
 .valid { color: green; }
+
+.ui-widget .time { width: 21px; }

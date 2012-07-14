@@ -40,15 +40,21 @@ dirname(htmlentities($_SERVER["SCRIPT_NAME"]))."/lib/timestrings.php?list=all";
 <p>The time in $tz is currently <strong>".str_replace('-', '&minus;', $dt->format(DateTime::RSS))."</strong>.</p>
 <h3>Convert a date/time to $tz time</h3>\n
 <div class=\"ui-widget\">
+	<table>
 	<form action=\"{$_SERVER['PHP_SELF']}\" method=\"post\">
 		<input type=\"hidden\" name=\"tz\" value=\"$tz\" />
-		<label for=\"timezone\">Timezone: </label>
-		<input class=\"timezone\" name=\"tzc\" value=\"$tzc\" /><br />
-		<label for=\"time\">DateTime: </label>
-		<input class=\"time\" name=\"day\" size=\"1\" value=\"{$tc['day']}\" /><input class=\"time\" name=\"month\" size=\"9\" value=\"{$tc['month']}\" /><input class=\"time\" name=\"year\" size=\"3\" value=\"{$tc['year']}\"/>
-		<input class=\"time\" name=\"hour\" size=\"1\"  value=\"{$tc['hour']}\" />:<input class=\"time\" name=\"min\" size=\"1\" value=\"{$tc['min']}\" />:<input class=\"time\" name=\"sec\" size=\"1\" value=\"{$tc['sec']}\" />
-		<input type=\"submit\" value=\"Convert\" />
+		<tr>
+			<td><label for=\"timezone\">Timezone: </label></td>
+			<td><input class=\"timezone\" name=\"tzc\" value=\"$tzc\" /></td>
+		</tr>
+		<tr>
+			<td><label for=\"time\">DateTime: </label></td>
+			<td><input class=\"time\" name=\"day\" value=\"{$tc['day']}\" /> <input class=\"time\" name=\"month\" style=\"width: 100px;\" value=\"{$tc['month']}\" /> <input class=\"time\" name=\"year\" style=\"width: 40px;\" value=\"{$tc['year']}\"/> &nbsp;
+			<input class=\"time\" name=\"hour\" value=\"{$tc['hour']}\" />:<input class=\"time\" name=\"min\" value=\"{$tc['min']}\" />:<input class=\"time\" name=\"sec\" value=\"{$tc['sec']}\" />
+			<input type=\"submit\" value=\"Convert\" /></td>
+		</tr>
 	</form>
+	</table>
 </div>
 ";
 		
