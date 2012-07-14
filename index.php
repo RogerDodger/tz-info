@@ -10,7 +10,7 @@ if(isset($_POST["tz"])) {
 		
 		$tzc = "UTC";
 		if(isset($_POST["tzc"]))
-			$tzc = $_POST["tzc"];
+			$tzc = htmlentities($_POST["tzc"]);
 		
 		$optsUrl = "http://".$_SERVER["SERVER_NAME"].
 dirname(htmlentities($_SERVER["SCRIPT_NAME"]))."/lib/timestrings.php?list=all";
