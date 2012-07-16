@@ -3,14 +3,14 @@ if(!isset($path))
 	$path = "."; 
 
 if(isset($_POST["tz"])) {
-	$tz = htmlentities($_POST["tz"]);
+	$tz = htmlentities(preg_replace("/\s/", "_", $_POST["tz"]));
 
 	if(in_array($tz, DateTimeZone::listIdentifiers())) {
 		$dt = new DateTime("now", new DateTimeZone($tz));
 		
 		$tzc = "UTC";
 		if(isset($_POST["tzc"]))
-			$tzc = htmlentities($_POST["tzc"]);
+			$tzc = htmlentities(preg_replace("/\s/", "_", $_POST["tzc"]));
 		
 		$optsUrl = "http://".$_SERVER["SERVER_NAME"].
 dirname(htmlentities($_SERVER["SCRIPT_NAME"]))."/lib/timestrings.php?list=all";
