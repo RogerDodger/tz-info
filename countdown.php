@@ -11,7 +11,7 @@ if(!isset($path))
 
 <head>
 
-<title>tz-info</title>
+<title>tz-info – Countdown</title>
 <?php include 'head.php' ?>
 
 </head>
