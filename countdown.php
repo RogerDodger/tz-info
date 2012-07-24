@@ -1,10 +1,4 @@
-<?php 
-if(!isset($path))	
-	$path = "."; 
-	
-	date_default_timezone_set('UTC');
-	$now = new DateTime('now');
-?>
+<?php include 'config.php' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -13,6 +7,7 @@ if(!isset($path))
 
 <title>tz-info – Countdown</title>
 <?php include 'head.php' ?>
+<script src="<?php echo ROOT_DIR ?>/js/countdown.js" type="text/javascript"></script>
 
 </head>
 
@@ -36,7 +31,7 @@ if(!isset($path))
 </p>
 <p>
 	If you believe this to be in error,
-	<a href="<?php echo $path."/index.php" ?>">do a manual conversion</a>.
+	<a href="<?php echo ROOT_DIR."/index.php" ?>">do a manual conversion</a>.
 <hr />
 
 <?php endif; ?>
@@ -44,7 +39,7 @@ if(!isset($path))
 <h2>Set a New Time</h2>
 <p>Enter the time of your party to go to the desired URL.</p>
 <div class="ui-widget">
-	<form action="<?php echo $path."/_countdown.php"?>" method="post">
+	<form action="<?php echo ROOT_DIR."/_countdown.php"?>" method="post">
 		<p>
 			<input class="time" name="day" value="01" />
 			<input class="time" name="month" value="January" />

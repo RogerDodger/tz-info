@@ -1,6 +1,4 @@
-<?php 
-if(!isset($path))	
-	$path = "."; 
+<?php include 'config.php'; 
 
 if(isset($_POST["tz"])) {
 	$tz = htmlentities(preg_replace("/\s/", "_", $_POST["tz"]));
@@ -18,14 +16,14 @@ dirname(htmlentities($_SERVER["SCRIPT_NAME"]))."/lib/timestrings.php?list=all";
 			utf8_encode(file_get_contents($optsUrl)), true
 		);
 		
-		$now = new DateTime('now', new DateTimeZone('UTC'));
+		$now = new DateTime('now');
 		$defaults = array(
 			"year"  => $now->format('Y'),
 			"month" => $now->format('F'),
 			"day"   => $now->format('d'),
 			"hour"  => $now->format('H'),
 			"min"   => $now->format('i'),
-			"sec"   => $now->format('s'),
+			"sec"   => "00",
 		);
 		
 		foreach(array_keys($opts) as $opt) {
@@ -41,7 +39,7 @@ dirname(htmlentities($_SERVER["SCRIPT_NAME"]))."/lib/timestrings.php?list=all";
 <h3>Convert a date/time to $tz time</h3>\n
 <div class=\"ui-widget\">
 	<table>
-	<form action=\"{$_SERVER['PHP_SELF']}\" method=\"post\">
+	<form action=\"".ROOT_DIR."/index.php\" method=\"post\">
 		<input type=\"hidden\" name=\"tz\" value=\"$tz\" />
 		<tr>
 			<td><label for=\"timezone\">Timezone: </label></td>
@@ -98,7 +96,7 @@ dirname(htmlentities($_SERVER["SCRIPT_NAME"]))."/lib/timestrings.php?list=all";
 <div id="main">
 
 <div class="ui-widget">
-	<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
+	<form action="<?php echo ROOT_DIR."/index.php" ?>" method="post">
 		<label for="timezone">Timezone: </label>
 		<input class="timezone" name="tz" value="<?php echo $tz ?>"/>
 		<input type="submit" value="Get info" />
