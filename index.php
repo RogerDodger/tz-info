@@ -49,7 +49,7 @@ dirname(htmlentities($_SERVER["SCRIPT_NAME"]))."/lib/timestrings.php?list=all";
 		</tr>
 		<tr>
 			<td><label for=\"time\">DateTime: </label></td>
-			<td><input class=\"time\" name=\"day\" value=\"{$tc['day']}\" /> <input class=\"time\" name=\"month\" style=\"width: 100px;\" value=\"{$tc['month']}\" /> <input class=\"time\" name=\"year\" style=\"width: 40px;\" value=\"{$tc['year']}\"/> &nbsp;
+			<td><input class=\"time\" name=\"day\" value=\"{$tc['day']}\" /> <input class=\"time\" name=\"month\" value=\"{$tc['month']}\" /> <input class=\"time\" name=\"year\" value=\"{$tc['year']}\"/> &nbsp;
 			<input class=\"time\" name=\"hour\" value=\"{$tc['hour']}\" />:<input class=\"time\" name=\"min\" value=\"{$tc['min']}\" />:<input class=\"time\" name=\"sec\" value=\"{$tc['sec']}\" />
 			<input type=\"submit\" value=\"Convert\" /></td>
 		</tr>
@@ -87,15 +87,7 @@ dirname(htmlentities($_SERVER["SCRIPT_NAME"]))."/lib/timestrings.php?list=all";
 <head>
 
 <title>tz-info</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="shortcut icon" href="favicon.ico" />
-
-<link href="<?php echo $path ?>/css/main.css" rel="stylesheet" type="text/css" />
-<link href="<?php echo $path ?>/css/ui-lightness/jquery-ui-1.8.21.custom.css" rel="stylesheet" type="text/css" />
-
-<script src="<?php echo $path ?>/js/jquery-1.7.2.min.js" type="text/javascript"></script>
-<script src="<?php echo $path ?>/js/jquery-ui-1.8.21.custom.min.js" type="text/javascript"></script>
-<script src="<?php echo $path ?>/js/site.js" type="text/javascript"></script>
+<?php include 'head.php' ?>
 
 </head>
 
@@ -115,8 +107,7 @@ dirname(htmlentities($_SERVER["SCRIPT_NAME"]))."/lib/timestrings.php?list=all";
 
 <?php echo $response ?>
 
-<hr />
-<p id="footer">Written by RogerDodger (<a href="https://github.com/RogerDodger/tz-info">view source</a>).</p>
+<?php include 'foot.php' ?>
 
 </div>
 
